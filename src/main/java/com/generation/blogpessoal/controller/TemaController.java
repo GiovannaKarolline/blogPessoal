@@ -35,7 +35,7 @@ public class TemaController {
 	@GetMapping
 	public ResponseEntity<List<Tema>> getAll(){
 		return ResponseEntity.ok(temaRepository.findAll()); //o mesmo que usar "SELECT * FROM tb_temas;" no sgbd	
-		// SELECT * FROM tb_temas;
+		// o mesmo que SELECT * FROM tb_temas;
 	}
 	
 	@GetMapping("/{id}")
@@ -43,7 +43,7 @@ public class TemaController {
 		return temaRepository.findById(id)
 				.map(resposta -> ResponseEntity.ok(resposta))
 				.orElse(ResponseEntity.notFound().build());
-		// SELECT * FROM tb_temas WHERE id = ?;
+		// o mesmo que SELECT * FROM tb_temas WHERE id = ?;
 	}
 	
 	@GetMapping("/descricao/{descricao}")
