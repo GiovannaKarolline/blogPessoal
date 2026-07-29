@@ -45,7 +45,7 @@ public class Usuario {
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties(value = "usuario", allowSetters = true)
-	private List<Postagem> postagem;
+	private List<Postagem> postagens;
 
 	public Long getId() {
 		return this.id;
@@ -88,11 +88,11 @@ public class Usuario {
 	}
 
 	public List<Postagem> getPostagem() {
-		return this.postagem;
+		return this.postagens;
 	}
 
-	public void setPostagem(List<Postagem> postagem) {
-		this.postagem = postagem;
+	public void setPostagem(List<Postagem> postagens) {
+		this.postagens = postagens;
 	}
 
 }
