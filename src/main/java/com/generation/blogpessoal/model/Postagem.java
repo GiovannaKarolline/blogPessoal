@@ -40,11 +40,11 @@ public class Postagem {
 	@ManyToOne //Postagens está do lado N da cardinalidade.
 	//JsonIgnore evita que haja um looping infinito ao acessar as instâncias dos 
 	//lados do relacionamento (seja de postagem ou tema).
-	@JsonIgnoreProperties("postagem")
+	@JsonIgnoreProperties("postagens")
 	private Tema tema;
 	
 	@ManyToOne
-	@JsonIgnoreProperties("postagem")
+	@JsonIgnoreProperties("postagens")
 	private Usuario usuario;
 	
 	public Tema getTema() {
