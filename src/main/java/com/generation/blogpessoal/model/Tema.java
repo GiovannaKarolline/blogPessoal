@@ -31,7 +31,7 @@ public class Tema {
 	// Dados sendo carregados a partir da primeira consulta neles (LAZY) e não mantidos preventivamente, deixa a aplicação mais leve
 	// Cascade do tipo REMOVE faz com que todas as postagens associadas ao tema sejam excluídas caso ele seja excluído.
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "tema", cascade = CascadeType.REMOVE) // Lado 1 da cardinalidade, mappedBy identificando onde está a chave estrangeira
-	@JsonIgnoreProperties("postagens")
+	@JsonIgnoreProperties("tema")
 	private List<Postagem> postagens;
 	
 	public List<Postagem> getPostagens() {
