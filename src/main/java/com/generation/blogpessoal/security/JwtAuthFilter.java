@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.lang.NonNull;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -81,11 +82,11 @@ public class JwtAuthFilter extends OncePerRequestFilter {
                 SecurityContextHolder.getContext().setAuthentication(authToken);
                 
             } else {
-                throw new RuntimeException("Token JWT inválido ou expirado");
+                throw new BadCredentialsException("Token JWT inválido ou expirado");
             }
             
         } else {
-            throw new RuntimeException("Usuário não pode ser extraído do token JWT");
+            throw new BadCredentialsException("Usuário não pode ser extraído do token JWT");
         }
     }
 }
