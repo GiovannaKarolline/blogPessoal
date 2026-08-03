@@ -89,11 +89,11 @@ public class Usuario {
 		this.foto = foto;
 	}
 
-	public List<Postagem> getPostagem() {
+	public List<Postagem> getPostagens() {
 		return this.postagens;
 	}
 
-	public void setPostagem(List<Postagem> postagens) {
+	public void setPostagens(List<Postagem> postagens) {
 		this.postagens = postagens;
 	}
 
